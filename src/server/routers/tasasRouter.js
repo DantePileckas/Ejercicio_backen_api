@@ -15,7 +15,12 @@ function getTasasRouter() {
 
         try {
             const tasaObtenida = await tasasApi.getTasas(marca,importe)
-            res.status(201).json(tasaObtenida)
+            const response = { 
+                tasa: tasaObtenida,
+                marca: marca,
+                importe: importe
+             }
+            res.status(201).json(response)
         } catch (err) {
             res.status(err.estado).json(err)
         }
