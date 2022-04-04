@@ -17,9 +17,11 @@ class App {
     }
 
     async start(port) {
-        if (!port) {
-            port = 0
-        }
+       // if (!port) {
+       //     port = 0
+       // }
+
+        var port = process.env.PORT || 3000;  
 
         const server = this.app.listen(port, () => {
             const actualPort = server.address().port
