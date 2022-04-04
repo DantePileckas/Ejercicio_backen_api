@@ -14,6 +14,7 @@ function getTasasRouter() {
         const importe = req.body.importe
 
         try {
+            
             const tasaObtenida = await tasasApi.getTasas(marca,importe)
             const response = { 
                 tasa: tasaObtenida,
