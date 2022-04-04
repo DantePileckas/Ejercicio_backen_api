@@ -9,9 +9,6 @@ class App {
         app.use(express.json())
         app.set('json spaces', 4)
         app.use('/api', getTasasRouter())
-        app.use(function(req, res){
-            res.send(404);
-        });
         this.app = app
     }
 
